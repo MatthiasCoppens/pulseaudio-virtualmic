@@ -4,7 +4,7 @@ usage() {
     echo "Usage: $0 [-p pipe_filename] [-n source_name] [-f format]"
     echo "       [-r rate] [-c channels] [-v] [-d] [-h] [input_filename]"
     echo
-    echo "  input_filename  This file is piped to the virtual mic (can be an url)"
+    echo "  input_filename  This file is piped to the virtual mic (can be an url) (default: stdin)"
     echo "  -p, --pipe      Set audio pipe filename (use mktemp otherwise)"
     echo "  -n, --name      Set PulseAudio source_name (default: virtualmic)"
     echo "  -f, --format    Set audio format (default: s16le)"
