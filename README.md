@@ -4,10 +4,15 @@ This minimal script creates a PulseAudio source and pipes a media file or stream
 
 ## Dependencies
 
+- any POSIX compliant shell
 - [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/)
 - [FFmpeg](http://ffmpeg.org/)
-- any POSIX compliant shell
 - [mktemp](https://www.gnu.org/software/coreutils/mktemp) (optional, not needed when `virtualmic` is run with `-p filename`)
+
+## Installation
+
+Copy the script to any of your `$PATH` directories.
+On most systems, `/usr/bin` would be the most sensical directory.
 
 ## Usage
 
