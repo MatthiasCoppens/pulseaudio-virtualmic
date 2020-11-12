@@ -2,6 +2,8 @@
 
 This minimal script creates a PulseAudio source and pipes a media file or stream into it.
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/pulseaudio-virtualmic.svg)](https://repology.org/project/pulseaudio-virtualmic/versions)
+
 ## Dependencies
 
 - any POSIX compliant shell
