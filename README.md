@@ -51,9 +51,25 @@ For this to work you first need to install an app on your phone to broadcast aud
 I'm using [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en_US&gl=US) on Android.
 When you run the app on your phone, you can connect to it with `virtualmic`.
 
+### Over wifi
+
 With an IP Webcam URL, this is what the command looks like:
 ```
-virtualmic 192.168.0.5:8080/audio.opus
+virtualmic http://192.168.0.5:8080/audio.opus
 ```
 
 There will of course be some latency, but the latency due to `virtualmic` should be very little.
+
+### With ADB (the Android Debug Bridge)
+
+On Android devices you can use ADB to connect over USB for a better connection.
+In my previous example with IP Webcam, the phone broadcasts audio over port 8080.
+This port can be forwarded to a connected computer using ADB:
+```
+adb forward tcp:8080 tcp:8080
+```
+
+Then you can connect `virtualmic` to your local port:
+```
+virtualmic http://localhost:8080/audio.opus
+```
