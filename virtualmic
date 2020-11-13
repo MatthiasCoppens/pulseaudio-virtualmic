@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Help message
 usage() {
     echo "Usage: $0 [-p pipe_filename] [-n source_name] [-f format]"
     echo "       [-r rate] [-c channels] [-v] [-d] [-h] [input_filename]"
@@ -15,6 +16,7 @@ usage() {
     echo "  -h, --help      Show this help"
 }
 
+# Default variables
 input_filename='-'        # Positional argument
 pipe_filename=            # -p / --pipe
 source_name='virtualmic'  # -n / --name
@@ -24,6 +26,7 @@ channels='1'              # -c / --channels
 verbose=                  # -v / --verbose
 default=                  # -d / --default
 
+# Read arguments
 while [ "$1" != '' ]
 do
     case "$1" in
@@ -42,8 +45,10 @@ do
     shift
 done
 
+# If no --pipe, use mktemp
 [ "$pipe_filename" ] || pipe_filename="$(mktemp -u)"
 
+# Print variables
 [ "$verbose" ] && {
     echo "input_filename: $input_filename"
     echo "pipe_filename:  $pipe_filename"
